@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "React Extension",
+  "description": "React Extension Description",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Click Me",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs", "bookmarks", "storage"],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newTab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
